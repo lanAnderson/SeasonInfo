@@ -37,7 +37,8 @@
     "seasons": "<2.4.2-BETA",
     "sereneseasons": "<9.1.0.0",
     "xaerominimap": "<24.0.0",
-    "map_atlases": "<1.20-6.0.0"
+    "map_atlases": "<1.20-6.0.0",
+    "ftbchunks": "<2001.3.2"
   },
   "suggests": {
     "seasonsextras": "*"

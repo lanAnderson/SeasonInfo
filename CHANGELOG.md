@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
+## [1.11.3] - 2024-11-06
+
+### Fixed
+
+- (1.20.1) Fixed crash with latest version FTBChunks.
+    - Version 2001.3.2 is now the minimum version
+
 ## [1.11.2] - 2024-10-22
 
 ### Changed
