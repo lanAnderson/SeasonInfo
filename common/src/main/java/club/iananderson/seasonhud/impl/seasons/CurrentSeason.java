@@ -87,7 +87,7 @@ public class CurrentSeason {
 
       case SHOW_WITH_TOTAL_DAYS:
         text = new TranslatableComponent(ShowDay.SHOW_WITH_TOTAL_DAYS.getKey(), getSeasonKey(), seasonDate,
-                                      seasonDuration);
+                                         seasonDuration);
 
         if (!Calendar.validDetailedMode()) {
           text = new TranslatableComponent(ShowDay.NONE.getKey(), getSeasonKey());

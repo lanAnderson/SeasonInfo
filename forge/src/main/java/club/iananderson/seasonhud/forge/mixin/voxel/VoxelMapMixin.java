@@ -1,10 +1,7 @@
 package club.iananderson.seasonhud.forge.mixin.voxel;
 
-import static journeymap.client.api.display.Context.UI.Minimap;
-
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap.Minimap;
 import club.iananderson.seasonhud.impl.seasons.CurrentSeason;
 import com.mamiyaotaru.voxelmap.Map;
 import com.mamiyaotaru.voxelmap.MapSettingsManager;

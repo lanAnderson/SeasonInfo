@@ -3,13 +3,11 @@ package club.iananderson.seasonhud.fabric.platform;
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap.Minimap;
-import club.iananderson.seasonhud.impl.seasons.Calendar;
 import club.iananderson.seasonhud.platform.Services;
 import club.iananderson.seasonhud.platform.services.IMinimapHelper;
 import com.mamiyaotaru.voxelmap.MapSettingsManager;
 import com.mamiyaotaru.voxelmap.VoxelMap;
 import dev.ftb.mods.ftbchunks.client.FTBChunksClientConfig;
-import io.github.lucaargolo.seasons.FabricSeasons;
 import java.util.Objects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
@@ -19,8 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import pepjebs.mapatlases.MapAtlasesMod;
 import pepjebs.mapatlases.utils.MapAtlasesAccessUtils;
-import xaero.common.HudMod;
 import sereneseasons.init.ModConfig;
+import xaero.common.HudMod;
 
 public class FabricMinimapHelper implements IMinimapHelper {
 

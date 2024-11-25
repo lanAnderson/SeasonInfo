@@ -79,8 +79,8 @@ public class MainConfigScreen extends SeasonHudScreen {
     super.render(graphics, mouseX, mouseY, partialTicks);
 
     GuiComponent.drawCenteredString(graphics, font, MINIMAP_SETTINGS, this.width / 2,
-                                MENU_PADDING + (2 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
-                                    + BUTTON_PADDING), 16777215);
+                                    MENU_PADDING + (2 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
+                                        + BUTTON_PADDING), 16777215);
 
     if (Services.PLATFORM.isModLoaded("journeymap")) {
       GuiComponent.drawCenteredString(graphics, font, JOURNEYMAP, this.width / 2,
@@ -100,7 +100,8 @@ public class MainConfigScreen extends SeasonHudScreen {
   public void init() {
     super.init();
 
-    int enableModWidth = font.width(new TranslatableComponent("menu.seasonhud.main.enableMod.button").append(": OFF")) + 8;
+    int enableModWidth =
+        font.width(new TranslatableComponent("menu.seasonhud.main.enableMod.button").append(": OFF")) + 8;
 
     CycleButton<Boolean> enableModButton = CycleButton.onOffBuilder(enableMod)
         .create(this.width - enableModWidth - TITLE_PADDING / 2, TITLE_PADDING / 2, enableModWidth, BUTTON_HEIGHT,
