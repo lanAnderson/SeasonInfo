@@ -95,12 +95,6 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
     xSlider.active = hudLocationButton.getValue() == Location.TOP_LEFT;
     ySlider.active = hudLocationButton.getValue() == Location.TOP_LEFT;
 
-    if (Common.fabricSeasonsLoaded()) {
-      graphics.drawCenteredString(font, "Day Length", leftButtonX + BUTTON_WIDTH / 2,
-                                  MENU_PADDING + (3 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
-                                      + BUTTON_PADDING), 16777215);
-    }
-
     MutableComponent seasonCombined = CurrentSeason.getInstance(this.minecraft).getSeasonHudText();
 
     int componentWidth = this.font.width(seasonCombined);
@@ -143,6 +137,12 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
     graphics.pose().translate(0, 0, 50);
     graphics.drawString(font, seasonCombined, x, y, 0xffffff);
     graphics.pose().popPose();
+
+    if (Common.fabricSeasonsLoaded()) {
+      graphics.drawCenteredString(font, "Day Length", leftButtonX + BUTTON_WIDTH / 2,
+                                  MENU_PADDING + (3 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
+                                      + BUTTON_PADDING), 16777215);
+    }
   }
 
   @Override
@@ -205,11 +205,11 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
                   Component.translatable("menu.seasonhud.season.showSubSeason.button"),
                   (b, val) -> Config.setShowSubSeason(val));
 
-    CycleButton<Boolean> showTropicalSeasonButton = CycleButton.onOffBuilder(showTropicalSeason)
-        .withTooltip(t -> Tooltip.create(Component.translatable("menu.seasonhud.season.showTropicalSeason.tooltip")))
-        .create(rightButtonX, (buttonStartY + (row * yOffset)), BUTTON_WIDTH, BUTTON_HEIGHT,
-                Component.translatable("menu.seasonhud.season.showTropicalSeason.button"),
-                (b, val) -> Config.setShowTropicalSeason(val));
+      CycleButton<Boolean> showTropicalSeasonButton = CycleButton.onOffBuilder(showTropicalSeason)
+          .withTooltip(t -> Tooltip.create(Component.translatable("menu.seasonhud.season.showTropicalSeason.tooltip")))
+          .create(rightButtonX, (buttonStartY + (row * yOffset)), BUTTON_WIDTH, BUTTON_HEIGHT,
+                  Component.translatable("menu.seasonhud.season.showTropicalSeason.button"),
+                  (b, val) -> Config.setShowTropicalSeason(val));
       widgets.addAll(Arrays.asList(showSubSeasonButton, showTropicalSeasonButton));
     }
     if (Common.fabricSeasonsLoaded()) {

@@ -60,7 +60,7 @@ dependencies {
 
     //JourneyMap
     modCompileOnlyApi group: 'info.journeymap', name: 'journeymap-api-fabric', version: project.journeymap_api_version, changing: true
-    modCompileOnly("maven.modrinth:journeymap:1.21-${project.journeymap_version}+fabric") {
+    modCompileOnly("maven.modrinth:journeymap:1.21.1-${project.journeymap_version}+fabric") {
         exclude group: 'net.fabricmc', module: 'fabric-loader'
     }
 
@@ -126,7 +126,7 @@ dependencies {
             break
         case "journey":
             modImplementation group: 'info.journeymap', name: 'journeymap-api-fabric', version: project.journeymap_api_version, changing: true
-            modImplementation("maven.modrinth:journeymap:1.21-${project.journeymap_version}+fabric")
+            modImplementation("maven.modrinth:journeymap:1.21.1-${project.journeymap_version}+fabric")
             modImplementation("maven.modrinth:common-network:${project.common_network_version}-fabric")
             break
         case "ftb":

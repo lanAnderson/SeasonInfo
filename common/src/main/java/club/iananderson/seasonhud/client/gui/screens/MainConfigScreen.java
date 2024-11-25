@@ -3,7 +3,6 @@ package club.iananderson.seasonhud.client.gui.screens;
 import club.iananderson.seasonhud.client.gui.components.buttons.MenuButton;
 import club.iananderson.seasonhud.client.gui.components.buttons.MenuButton.MenuButtons;
 import club.iananderson.seasonhud.config.Config;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.platform.Services;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -127,7 +126,7 @@ public class MainConfigScreen extends SeasonHudScreen {
     if (Services.PLATFORM.isModLoaded("journeymap")) {
       row += 2; //6
       journeyMapButton = Button.builder(Component.translatable("menu.seasonhud.main.journeymap.options.button"),
-                                               (button) -> UIManager.INSTANCE.openAddonOptionsEditor(this, true))
+                                        (button) -> UIManager.INSTANCE.openAddonOptionsEditor(this, true))
           .tooltip(Tooltip.create(Component.translatable("menu.seasonhud.main.journeymap.options.tooltip")))
           .bounds(leftButtonX, (buttonStartY + (row * yOffset)), BUTTON_WIDTH, BUTTON_HEIGHT)
           .build();
