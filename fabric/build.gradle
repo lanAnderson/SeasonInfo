@@ -54,13 +54,13 @@ dependencies {
     compileOnly("net.jodah:typetools:0.6.3")
 
     //Xaero's Minimap
-    modCompileOnly("maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Fabric_1.21") {
+    modCompileOnly("maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Fabric_1.21.4") {
         exclude group: 'net.fabricmc', module: 'fabric-loader'
     }
 
     //JourneyMap
     modCompileOnlyApi group: 'info.journeymap', name: 'journeymap-api-fabric', version: project.journeymap_api_version, changing: true
-    modCompileOnly("maven.modrinth:journeymap:1.21.1-${project.journeymap_version}+fabric") {
+    modCompileOnly("maven.modrinth:journeymap:1.21.4-${project.journeymap_version}+fabric") {
         exclude group: 'net.fabricmc', module: 'fabric-loader'
     }
 
@@ -97,9 +97,9 @@ dependencies {
     }
 
     // Development QOL
-    modLocalRuntime("mezz.jei:jei-${project.minecraft_version}-fabric:${project.jei_version}") {
-        exclude group: 'net.fabricmc', module: 'fabric-loader'
-    }
+//    modLocalRuntime("mezz.jei:jei-${project.minecraft_version}-fabric:${project.jei_version}") {
+//        exclude group: 'net.fabricmc', module: 'fabric-loader'
+//    }
 
     modLocalRuntime("com.terraformersmc:modmenu:${modmenu_version}")
 
@@ -122,11 +122,11 @@ dependencies {
     // See root gradle.properties to choose which to use at runtime.
     switch (project.minimap_mod.toLowerCase(Locale.ROOT)) {
         case "xaero":
-            modLocalRuntime("maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Fabric_1.21")
+            modLocalRuntime("maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Fabric_1.21.4")
             break
         case "journey":
             modImplementation group: 'info.journeymap', name: 'journeymap-api-fabric', version: project.journeymap_api_version, changing: true
-            modImplementation("maven.modrinth:journeymap:1.21.1-${project.journeymap_version}+fabric")
+            modImplementation("maven.modrinth:journeymap:1.21.4-${project.journeymap_version}+fabric")
             modImplementation("maven.modrinth:common-network:${project.common_network_version}-fabric")
             break
         case "ftb":
