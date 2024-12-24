@@ -26,6 +26,11 @@ public class HudOffsetSlider extends BasicSlider {
     return new Builder(prefix);
   }
 
+  protected boolean clicked(double d, double e) {
+    return this.active && this.visible && d >= (double) this.getX() && e >= (double) this.getY() && d < (double) (
+        this.getX() + this.width) && e < (double) (this.getY() + this.height);
+  }
+
   @Override
   public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
     if (this.active && this.visible && mouseButton == 1) {
