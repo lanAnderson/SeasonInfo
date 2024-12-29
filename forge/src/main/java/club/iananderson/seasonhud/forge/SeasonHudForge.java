@@ -2,15 +2,7 @@ package club.iananderson.seasonhud.forge;
 
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
-import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
 import fuzs.forgeconfigapiport.forge.api.neoforge.v4.NeoForgeConfigRegistry;
-import club.iananderson.seasonhud.forge.impl.curios.CuriosCompat;
-import club.iananderson.seasonhud.impl.accessories.AccessoriesCompat;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
-import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
-import dev.architectury.utils.Env;
-import dev.architectury.utils.EnvExecutor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
