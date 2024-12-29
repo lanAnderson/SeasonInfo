@@ -106,7 +106,7 @@ dependencies {
             break
         case "none":
             break
-        default: println("Unknown recipe viewer specified: ${project.minimap_mod}. Must be xaero, journey, ftb, " +
+        default: println("Unknown minimap mod specified: ${project.minimap_mod}. Must be xaero, journey, ftb, " +
                 "atlas, voxel, or none")
     }
 }
