@@ -5,6 +5,7 @@ import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.accessories.AccessoriesCompat;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap.Minimap;
 import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
+import club.iananderson.seasonhud.neoforge.impl.curios.CuriosCompat;
 import club.iananderson.seasonhud.platform.Services;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -25,8 +26,11 @@ public class SeasonHudNeoForge {
   }
 
   public static void onInitialize(FMLCommonSetupEvent event) {
-    if (Common.accessoriesLoaded()) {
-      Common.LOG.info("Talking to Accessories");
+    if (Common.curiosLoaded()) {
+      Common.LOG.info("Talking to Curios");
+      CuriosCompat.init();
+    } else if (Common.accessoriesLoaded()) {
+      Common.LOG.info("Talking to Accessories " + Services.PLATFORM.getModVersion("accessories"));
       AccessoriesCompat.init();
     }
   }

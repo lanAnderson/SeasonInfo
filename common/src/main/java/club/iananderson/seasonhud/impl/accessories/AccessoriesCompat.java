@@ -7,11 +7,11 @@ public class AccessoriesCompat {
   public AccessoriesCompat() {
   }
 
-  public static void clientInit() {
-    if (Common.accessoriesLoaded()) {
-      AccessoriesCalendar.clientInit();
-    }
-  }
+//  public static void clientInit() {
+//    if (Common.accessoriesLoaded()) {
+//      AccessoriesCalendar.clientInit();
+//    }
+//  }
 
   public static void init() {
     if (Common.accessoriesLoaded()) {

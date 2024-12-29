@@ -1,9 +1,6 @@
 {
-  "replace": true,
+  "replace": false,
   "values": [
-    {
-      "id": "sereneseasons:calendar",
-      "required": false
-    }
+    "sereneseasons:calendar"
   ]
 }

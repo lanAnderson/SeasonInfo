@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
+## [1.11.6] - 2024-12-28
+
+### Added
+
+- (1.21.x) Added support for Curios API Continuation.
+
+### Changed
+
+- Updated Accessories/Curios/Trinkets calendar icon, and removed the background.
+
+### Fixed
+
+- (1.21.x) Fixed Accessories icon being broken with the latest Accessories version.
+
 ## [1.11.5] - 2024-11-25
 
 ### Changed
