@@ -130,7 +130,7 @@ dependencies {
             break
         default: println("Unknown season mod specified: ${project.minimap_mod}. Must be serene or fabric")
     }
-    
+
     // Minimap Mod Dev Tests
     // See root gradle.properties to choose which to use at runtime.
     switch (project.minimap_mod.toLowerCase(Locale.ROOT)) {

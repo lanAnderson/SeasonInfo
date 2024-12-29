@@ -78,8 +78,8 @@ public class MainConfigScreen extends SeasonHudScreen {
     super.render(graphics, mouseX, mouseY, partialTicks);
 
     GuiComponent.drawCenteredString(graphics, font, MINIMAP_SETTINGS, this.width / 2,
-                                MENU_PADDING + (2 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
-                                    + BUTTON_PADDING), 16777215);
+                                    MENU_PADDING + (2 * (BUTTON_HEIGHT + BUTTON_PADDING)) - (font.lineHeight
+                                        + BUTTON_PADDING), 16777215);
 
     if (Services.PLATFORM.isModLoaded("journeymap")) {
       GuiComponent.drawCenteredString(graphics, font, JOURNEYMAP, this.width / 2,

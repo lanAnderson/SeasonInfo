@@ -11,7 +11,6 @@ import pepjebs.mapatlases.MapAtlasesMod;
 import pepjebs.mapatlases.client.MapAtlasesClient;
 import pepjebs.mapatlases.config.MapAtlasesClientConfig;
 import sereneseasons.config.ServerConfig;
-import sereneseasons.init.ModConfig;
 
 public class ForgeMinimapHelper implements IMinimapHelper {
 
