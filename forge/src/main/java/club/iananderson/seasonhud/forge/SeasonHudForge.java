@@ -2,7 +2,15 @@ package club.iananderson.seasonhud.forge;
 
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
+import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
+import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
 import fuzs.forgeconfigapiport.forge.api.neoforge.v4.NeoForgeConfigRegistry;
+import club.iananderson.seasonhud.forge.impl.curios.CuriosCompat;
+import club.iananderson.seasonhud.impl.accessories.AccessoriesCompat;
+import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
+import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
+import dev.architectury.utils.Env;
+import dev.architectury.utils.EnvExecutor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -20,6 +28,7 @@ public class SeasonHudForge {
     NeoForgeConfigRegistry.INSTANCE.register(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "SeasonHUD-client.toml");
 
     modEventBus.addListener(SeasonHudForge::onInitialize);
+    modEventBus.addListener(SeasonHudForge::ftbChunkSetup);
   }
 
   public static void onInitialize(FMLCommonSetupEvent event) {
@@ -29,6 +38,13 @@ public class SeasonHudForge {
 //    } else if (Common.accessoriesLoaded()) {
 //      Common.LOG.info("Talking to Accessories");
 //      AccessoriesCompat.init();
+//    }
+  }
+
+  public static void ftbChunkSetup(FMLCommonSetupEvent event) {
+//    if (CurrentMinimap.ftbChunksLoaded()) {
+//      Common.LOG.info("Loading FTB Chunks Season Component");
+//      EnvExecutor.runInEnv(Env.CLIENT, () -> SeasonComponent.INSTANCE::registerFtbSeason);
 //    }
   }
 }
