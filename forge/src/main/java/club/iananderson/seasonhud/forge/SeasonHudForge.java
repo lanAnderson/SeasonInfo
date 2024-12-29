@@ -4,9 +4,10 @@ import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.forge.impl.curios.CuriosCompat;
 import club.iananderson.seasonhud.impl.accessories.AccessoriesCompat;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap.Minimap;
+import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.impl.minimaps.SeasonComponent;
-import club.iananderson.seasonhud.platform.Services;
+import dev.architectury.utils.Env;
+import dev.architectury.utils.EnvExecutor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -39,9 +40,9 @@ public class SeasonHudForge {
   }
 
   public static void ftbChunkSetup(FMLCommonSetupEvent event) {
-    if (Services.PLATFORM.isModLoaded(Minimap.FTB_CHUNKS.getModID())) {
+    if (CurrentMinimap.ftbChunksLoaded()) {
       Common.LOG.info("Loading FTB Chunks Season Component");
-      SeasonComponent.registerFtbSeason();
+      EnvExecutor.runInEnv(Env.CLIENT, () -> SeasonComponent.INSTANCE::registerFtbSeason);
     }
   }
 }
