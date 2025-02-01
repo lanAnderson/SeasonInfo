@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
+## [1.12.0] - 2025-02-01
+
+### Added
+
+- Added support for TerraFirmaCraft seasons
+
 ## [1.11.7] - 2024-12-29
 
 ### Fixed
