@@ -50,7 +50,8 @@ public class DefaultColorButton extends Button {
     int k = 1;
     if (!this.active) {
       k = 0;
-    } else if (this.isHoveredOrFocused()) {
+    }
+    else if (this.isHoveredOrFocused()) {
       k = 2;
     }
 

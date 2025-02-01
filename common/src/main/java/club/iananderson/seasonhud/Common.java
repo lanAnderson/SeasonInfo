@@ -3,14 +3,19 @@ package club.iananderson.seasonhud;
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.platform.Services;
+import io.github.lucaargolo.seasons.FabricSeasons;
 import java.util.List;
+import java.util.Objects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.DeathScreen;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sereneseasons.init.ModConfig;
 
 public class Common {
   public static final String MOD_ID = "seasonhud";
@@ -21,7 +26,9 @@ public class Common {
   private static String platformName;
   private static boolean sereneSeasonsLoaded;
   private static boolean fabricSeasonsLoaded;
+  private static boolean terrafirmacraftLoaded;
   private static boolean curiosLoaded;
+  private static boolean trinketsLoaded;
   private static boolean accessoriesLoaded;
   private static boolean extrasLoaded;
 
@@ -33,7 +40,9 @@ public class Common {
     sereneSeasonsLoaded = Services.PLATFORM.isModLoaded("sereneseasons");
     fabricSeasonsLoaded = Services.PLATFORM.isModLoaded("seasons");
     extrasLoaded = Services.PLATFORM.isModLoaded("seasonsextras") || sereneSeasonsLoaded;
-    curiosLoaded = Services.PLATFORM.isModLoaded("trinkets") || Services.PLATFORM.isModLoaded("curios");
+    terrafirmacraftLoaded = Services.PLATFORM.isModLoaded("tfc");
+    curiosLoaded = Services.PLATFORM.isModLoaded("curios");
+    trinketsLoaded = Services.PLATFORM.isModLoaded("trinkets");
     accessoriesLoaded = Services.PLATFORM.isModLoaded("accessories");
   }
 
@@ -53,8 +62,16 @@ public class Common {
     return Common.extrasLoaded;
   }
 
+  public static boolean terrafirmacraftLoaded() {
+    return Common.terrafirmacraftLoaded;
+  }
+
   public static boolean curiosLoaded() {
     return Common.curiosLoaded;
+  }
+
+  public static boolean trinketsLoaded() {
+    return Common.trinketsLoaded;
   }
 
   public static boolean accessoriesLoaded() {
@@ -75,6 +92,24 @@ public class Common {
   public static boolean drawDefaultHud() {
     return (Config.getEnableMod() && (CurrentMinimap.noMinimapLoaded() || !Config.getEnableMinimapIntegration() || (
         CurrentMinimap.allMinimapsHidden() && Config.getShowDefaultWhenMinimapHidden())));
+  }
+
+  /**
+   * Checks if the current dimension is whitelisted in the season mod's config.
+   *
+   * @return True if the current dimension is whitelisted in the season mod's config.
+   */
+  public static boolean hideHudInCurrentDimension() {
+    ResourceKey<Level> currentDim = Objects.requireNonNull(Minecraft.getInstance().level).dimension();
+    if (Common.fabricSeasonsLoaded()) {
+      return !FabricSeasons.CONFIG.isValidInDimension(currentDim);
+    }
+    if (Common.sereneSeasonsLoaded()) {
+      return !ModConfig.seasons.isDimensionWhitelisted(currentDim);
+    }
+    else {
+      return false;
+    }
   }
 
   public static boolean allTrue(List<Boolean> values) {

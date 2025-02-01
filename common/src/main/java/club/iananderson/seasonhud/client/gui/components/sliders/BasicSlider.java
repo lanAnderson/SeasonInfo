@@ -84,7 +84,8 @@ public class BasicSlider extends AbstractSliderButton {
     if (CommonInputs.selected(keyCode)) {
       this.canChangeValue = !this.canChangeValue;
       return true;
-    } else {
+    }
+    else {
       if (this.canChangeValue) {
         boolean bl = keyCode == 263;
         if (bl || keyCode == 262) {
@@ -102,7 +103,8 @@ public class BasicSlider extends AbstractSliderButton {
   protected void updateMessage() {
     if (this.drawString) {
       this.setMessage(Component.literal(this.getValueString()));
-    } else {
+    }
+    else {
       this.setMessage(Component.empty());
     }
   }

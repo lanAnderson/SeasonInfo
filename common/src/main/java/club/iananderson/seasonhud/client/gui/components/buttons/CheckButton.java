@@ -45,7 +45,8 @@ public class CheckButton extends AbstractButton {
       if (this.isFocused()) {
         narrationElementOutput.add(NarratedElementType.USAGE,
                                    Component.translatable("narration.checkbox.usage.focused"));
-      } else {
+      }
+      else {
         narrationElementOutput.add(NarratedElementType.USAGE,
                                    Component.translatable("narration.checkbox.usage.hovered"));
       }

@@ -9,7 +9,9 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
 
     api "fuzs.forgeconfigapiport:forgeconfigapiport-common:${project.forge_config_api_port_version}"
-    modCompileOnly("io.wispforest:accessories-common:${project.accessories_version}-mojmap")
+    modCompileOnly "io.wispforest:accessories-common:${project.accessories_version}-mojmap"
+    modCompileOnly "maven.modrinth:accessories-cc-layer:7.4.0-beta.18"
+    modCompileOnly "dev.emi:trinkets:${project.trinkets_version}"
 
     // Minimap Mods
     // Not used in common unless they are actually  loaded.
@@ -19,4 +21,11 @@ dependencies {
     modCompileOnly "maven.modrinth:journeymap:${project.minecraft_version}-${project.journeymap_version}-forge"
     modCompileOnly "curse.maven:map-atlases-forge-519759:${project.map_atlases_forge_version}"
 
+    //Season Mods
+    // Not used in common unless they are actually  loaded.
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
+    modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
+    modCompileOnly "maven.modrinth:fabric-seasons-extras:${project.fabric_seasons_extras_version}"
+    modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
 }

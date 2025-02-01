@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "Alkutalvi",
   "desc.seasonhud.season.winter.late": "Lopputalvi",
   "desc.seasonhud.season.winter.mid": "Keskitalvi",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "Päivä #",
   "desc.seasonhud.showday.month": "(Kuukausi), #",
   "desc.seasonhud.showday.none": "OFF",

@@ -230,7 +230,8 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
           }
 
           doneButton.active = true;
-        } else {
+        }
+        else {
           dayLengthBox.setTextColor(16733525);
           doneButton.active = false;
         }
@@ -260,7 +261,8 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
                                               scale, (b) -> {
         if (b.selected()) {
           Config.setShowDay(ShowDay.SHOW_WITH_TOTAL_DAYS);
-        } else {
+        }
+        else {
           Config.setShowDay((ShowDay.SHOW_DAY));
         }
       }, Config.getShowDay() == ShowDay.SHOW_WITH_TOTAL_DAYS);

@@ -2,7 +2,6 @@ package club.iananderson.seasonhud.impl.seasons;
 
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
-import club.iananderson.seasonhud.platform.Services;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -12,13 +11,15 @@ public class Calendar {
   }
 
   private static boolean findCalendar(Player player, Item item) {
-    return player.getInventory().contains(item.getDefaultInstance()) || Services.SEASON.findCuriosCalendar(player,
-                                                                                                           item);
+    boolean invCalenderFound = player.getInventory().contains(item.getDefaultInstance());
+    boolean curiosCalenderFound = CommonSeasonHelper.findCuriosCalendar(player, item);
+
+    return invCalenderFound | curiosCalenderFound;
   }
 
   private static boolean calendarFound() {
     Minecraft mc = Minecraft.getInstance();
-    Item calendar = Services.SEASON.calendar();
+    Item calendar = CommonSeasonHelper.calendar();
 
     if (!Common.extrasLoaded()) {
       return true;

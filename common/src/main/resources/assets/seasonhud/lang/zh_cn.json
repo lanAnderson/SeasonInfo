@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "初冬",
   "desc.seasonhud.season.winter.late": "深冬",
   "desc.seasonhud.season.winter.mid": "仲冬",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "第 # 天",
   "desc.seasonhud.showday.month": "(月份), #",
   "desc.seasonhud.showday.none": "关",

@@ -38,7 +38,8 @@ public class ColorEditBox extends EditBox {
         }
 
         ColorScreen.doneButton.active = true;
-      } else {
+      }
+      else {
         this.setTextColor(16733525);
         ColorScreen.doneButton.active = false;
       }
@@ -99,7 +100,7 @@ public class ColorEditBox extends EditBox {
     boolean seasonShort = (scaledWidth < widgetTotalSize);
 
     MutableComponent seasonCombined = CurrentSeason.getInstance(mc)
-                                                   .getSeasonMenuText(this.boxSeason, this.newSeasonColor, seasonShort);
+        .getSeasonMenuText(this.boxSeason, this.newSeasonColor, seasonShort);
 
     graphics.pose().pushPose();
     if ((mc.font.width(seasonCombined) > this.getWidth() - PADDING)) {

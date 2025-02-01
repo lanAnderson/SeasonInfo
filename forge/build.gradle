@@ -144,7 +144,7 @@ dependencies {
             modImplementation "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
             modImplementation "maven.modrinth:patchouli:${project.patchouli_version}-forge"
             break
-        default: println("Unknown season mod specified: ${project.minimap_mod}. Must be serene or fabric")
+        default: println("Unknown season mod specified: ${project.minimap_mod}. Must be serene or terra")
     }
 }
 
