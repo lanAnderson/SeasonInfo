@@ -39,8 +39,8 @@ public class Common {
     platformName = Services.PLATFORM.getPlatformName();
     sereneSeasonsLoaded = Services.PLATFORM.isModLoaded("sereneseasons");
     fabricSeasonsLoaded = Services.PLATFORM.isModLoaded("seasons");
-    extrasLoaded = Services.PLATFORM.isModLoaded("seasonsextras") || sereneSeasonsLoaded;
     terrafirmacraftLoaded = Services.PLATFORM.isModLoaded("tfc");
+    extrasLoaded = (Services.PLATFORM.isModLoaded("seasonsextras") || sereneSeasonsLoaded) && !terrafirmacraftLoaded;
     curiosLoaded = Services.PLATFORM.isModLoaded("curios");
     trinketsLoaded = Services.PLATFORM.isModLoaded("trinkets");
     accessoriesLoaded = Services.PLATFORM.isModLoaded("accessories");
