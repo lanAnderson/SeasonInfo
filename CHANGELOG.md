@@ -4,11 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
-## [1.12.0] - 2025-02-01
+## [1.12.0] - 2025-02-04
 
 ### Added
 
 - Added support for TerraFirmaCraft seasons
+
+### Changed
+
+- Some internal changes to make it easier to add support for other mods. 
+  - Let me know if I broke anything!
+- Made SereneSeasons an optional dependency on (Neo)Forge, to allow TerraFirmaCraft to run by itself.
+  - The game should load fine even if no season mod is used now, the season tracker will just be sad.
 
 ## [1.11.7] - 2024-12-29
 
