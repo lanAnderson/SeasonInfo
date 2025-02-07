@@ -101,8 +101,8 @@ public class CommonSeasonHelper {
    *
    * @return The current day of the season/sub-season.
    */
-  public static int getDate(Player player) {
-    int date = 0; // Just in case
+  public static long getDate(Player player) {
+    long date = 0; // Just in case
 
     if (Common.fabricSeasonsLoaded()) {
       date = FabricSeasonsHelper.getDate(player);

@@ -14,7 +14,7 @@ public class CurrentSeason {
   private final String currentSeason;
   private final String currentSubSeason;
   private final String seasonFileName;
-  private final int seasonDate;
+  private final long seasonDate;
   private final int seasonDuration;
   private Style seasonFormat;
 

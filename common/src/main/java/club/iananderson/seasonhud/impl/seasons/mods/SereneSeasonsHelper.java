@@ -47,12 +47,12 @@ public class SereneSeasonsHelper {
     }
   }
 
-  public static int getDate(Player player) {
+  public static long getDate(Player player) {
     ISeasonState currentSeasonState = SeasonHelper.getSeasonState(player.level());
-    int seasonDay = currentSeasonState.getDay(); //Current day out of the year (Default 24 days * 4 = 96 days)
-    int subSeasonDuration = ModConfig.seasons.subSeasonDuration; //In case the default duration is changed
-    int subSeasonDate = (seasonDay % subSeasonDuration) + 1; //Default 8 days in each sub-season (1 week)
-    int seasonDate = (seasonDay % (subSeasonDuration * 3)) + 1; //Default 24 days in a season (8 days * 3)
+    long seasonDay = currentSeasonState.getDay(); //Current day out of the year (Default 24 days * 4 = 96 days)
+    long subSeasonDuration = ModConfig.seasons.subSeasonDuration; //In case the default duration is changed
+    long subSeasonDate = (seasonDay % subSeasonDuration) + 1; //Default 8 days in each sub-season (1 week)
+    long seasonDate = (seasonDay % (subSeasonDuration * 3)) + 1; //Default 24 days in a season (8 days * 3)
 
     if (Config.getShowSubSeason()) {
       if (isTropicalSeason(player)) {
