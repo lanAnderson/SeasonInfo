@@ -39,9 +39,13 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
     //Serene Seasons
-    modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
-//    modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
-//    implementation("net.jodah:typetools:0.6.3")
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+//    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
+//    compileOnly("net.jodah:typetools:0.6.3")
+
+    //Terrafirmacraft
+    modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
+    modCompileOnly "maven.modrinth:patchouli:${project.patchouli_version}-forge"
 
     //Xaero's Minimap
     modCompileOnly "maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Forge_1.19.1"
@@ -94,6 +98,21 @@ dependencies {
         default: println("Unknown minimap mod specified: ${project.minimap_mod}. Must be xaero, journey, ftb, " +
                 "atlas, or none")
     }
+
+    // Season Mod Dev Tests (Forge)
+    // See root gradle.properties to choose which to use at runtime.
+    switch (project.season_mod.toLowerCase(Locale.ROOT)) {
+        case "serene":
+            modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+//            modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
+//            implementation("net.jodah:typetools:0.6.3")
+            break
+        case "terra":
+            modImplementation "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
+            modImplementation "maven.modrinth:patchouli:${project.patchouli_version}-forge"
+            break
+        default: println("Unknown season mod specified: ${project.minimap_mod}. Must be serene or terra")
+    }
 }
 
 shadowJar {
@@ -127,7 +146,8 @@ modrinth {
     changelog = recentChangelogText
 
     dependencies {
-        required.project "serene-seasons"
+        optional.project "serene-seasons"
+        optional.project "terrafirmacraft"
         optional.project "curios"
         optional.project "journeymap"
         optional.project "xaeros-minimap"
@@ -157,7 +177,8 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     mainFile.addGameVersion("Forge")
     mainFile.addGameVersion("Java 17")
 
-    mainFile.addRequirement("serene-seasons")
+    mainFile.addOptional("serene-seasons")
+    mainFile.addOptional("terrafirmacraft")
     mainFile.addOptional("curios")
     mainFile.addOptional("ftb-chunks-forge")
     mainFile.addOptional("journeymap")

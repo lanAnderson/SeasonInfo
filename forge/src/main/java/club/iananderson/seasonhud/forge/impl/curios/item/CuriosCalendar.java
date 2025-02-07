@@ -1,6 +1,6 @@
 package club.iananderson.seasonhud.forge.impl.curios.item;
 
-import club.iananderson.seasonhud.platform.Services;
+import club.iananderson.seasonhud.impl.seasons.CommonSeasonHelper;
 import javax.annotation.Nonnull;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +18,7 @@ public class CuriosCalendar implements ICurioItem {
 
   public static ICapabilityProvider initCapabilities() {
     ICurio curio = new ICurio() {
-      final ItemStack stack = new ItemStack(Services.SEASON.calendar().asItem());
+      final ItemStack stack = new ItemStack(CommonSeasonHelper.calendar().asItem());
 
       @Override
       public ItemStack getStack() {

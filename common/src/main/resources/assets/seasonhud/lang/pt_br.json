@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "Começo do inverno",
   "desc.seasonhud.season.winter.late": "Final do inverno",
   "desc.seasonhud.season.winter.mid": "Meio do inverno",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "Dia #",
   "desc.seasonhud.showday.month": "(Month), #",
   "desc.seasonhud.showday.none": "Desligado",

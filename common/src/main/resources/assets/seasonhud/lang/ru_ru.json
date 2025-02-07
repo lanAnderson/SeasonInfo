@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "Ранняя зима",
   "desc.seasonhud.season.winter.late": "Поздняя зима",
   "desc.seasonhud.season.winter.mid": "Середина зимы",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "День #",
   "desc.seasonhud.showday.month": "(Месяц), #",
   "desc.seasonhud.showday.none": "Выкл",

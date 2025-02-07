@@ -127,7 +127,8 @@ public class BasicSlider extends AbstractSliderButton {
   protected void updateMessage() {
     if (this.drawString) {
       this.setMessage(Component.literal(this.getValueString()));
-    } else {
+    }
+    else {
       this.setMessage(Component.empty());
     }
   }

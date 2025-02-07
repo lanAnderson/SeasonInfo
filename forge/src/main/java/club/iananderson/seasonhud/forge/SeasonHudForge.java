@@ -20,7 +20,7 @@ public class SeasonHudForge {
     MinecraftForge.EVENT_BUS.register(this);
     Common.init();
 
-    ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "SeasonHUD-client.toml");
+    ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "seasonhud-client.toml");
 
     modEventBus.addListener(ClientModEvents::onInitialize);
   }

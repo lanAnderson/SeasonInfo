@@ -55,7 +55,8 @@ public class SeasonHUDMixinPlugin implements IMixinConfigPlugin {
       return HAS_FTB;
     } else if (mixinClassName.startsWith("club.iananderson.seasonhud.mixin.mapatlases")) {
       return HAS_MAP_ATLASES;
-    } else {
+    }
+    else {
       return true;
     }
   }

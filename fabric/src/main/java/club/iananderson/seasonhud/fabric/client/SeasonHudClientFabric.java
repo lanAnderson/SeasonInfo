@@ -12,7 +12,7 @@ public class SeasonHudClientFabric implements ClientModInitializer {
   @Override
   public void onInitializeClient() {
     ModLoadingContext.registerConfig(Common.MOD_ID, ModConfig.Type.CLIENT, Config.GENERAL_SPEC,
-                                     "SeasonHUD-client.toml");
+                                     "seasonhud-client.toml");
     ClientEvents.register();
   }
 }
