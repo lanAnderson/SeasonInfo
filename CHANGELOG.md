@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
-## [1.12.0] - 2025-02-04
+## [1.12.0] - 2025-02-06
 
 ### Added
 
@@ -16,7 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Let me know if I broke anything!
 - Made SereneSeasons an optional dependency on (Neo)Forge, to allow TerraFirmaCraft to run by itself.
   - The game should load fine even if no season mod is used now, the season tracker will just be sad.
-
+- Changed date calculation from int to long to prevent a crash if too many days are added by commands.
+  
 ## [1.11.7] - 2024-12-29
 
 ### Fixed
