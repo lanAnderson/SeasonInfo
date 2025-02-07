@@ -12,6 +12,11 @@ dependencies {
     implementation 'com.electronwill.night-config:toml:3.6.3'
     compileOnly "net.minecraftforge:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
 
+    modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.1"
+    modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.1"
+    modCompileOnly "dev.emi:trinkets:${project.trinkets_version}"
+    modCompileOnly "top.theillusivec4.curios:curios-forge:${project.curios_version}"
+
     // Minimap Mods
     // Not used in common unless they are actually  loaded.
     modCompileOnly "maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Forge_1.19.1"

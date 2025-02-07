@@ -4,7 +4,6 @@ import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
-import io.wispforest.accessories.api.AccessoriesCapability;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.client.Minecraft;
@@ -43,12 +42,6 @@ public class Calendar {
       }
     }
 
-    else if (Common.accessoriesLoaded()) {
-      Optional<AccessoriesCapability> accessoriesInventory = AccessoriesCapability.getOptionally(player);
-      if (accessoriesInventory.isPresent()) {
-        curioEquipped = !accessoriesInventory.get().getEquipped(item).isEmpty();
-      }
-    }
     return curioEquipped;
   }
 

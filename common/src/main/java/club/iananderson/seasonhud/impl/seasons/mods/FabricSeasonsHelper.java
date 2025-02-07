@@ -1,6 +1,7 @@
 package club.iananderson.seasonhud.impl.seasons.mods;
 
 import club.iananderson.seasonhud.config.Config;
+import club.iananderson.seasonhud.platform.Services;
 import io.github.lucaargolo.seasons.FabricSeasons;
 import io.github.lucaargolo.seasons.utils.Season;
 import io.github.lucaargolo.seasonsextras.FabricSeasonsExtras;
@@ -12,12 +13,12 @@ public class FabricSeasonsHelper {
   private FabricSeasonsHelper(){
   }
 
-  public static Item CALENDAR = FabricSeasonsExtras.SEASON_CALENDAR_ITEM;
+  public static Item CALENDAR = Services.PLATFORM.calendar();
 
   public static boolean isSeasonTiedWithSystemTime = FabricSeasons.CONFIG.isSeasonTiedWithSystemTime();
 
   public static String getCurrentSubSeason(Player player) {
-    Season currentSeasonState = FabricSeasons.getCurrentSeason(player.level());
+    Season currentSeasonState = FabricSeasons.getCurrentSeason(player.level);
 
     if (currentSeasonState.toString().equalsIgnoreCase("fall")) {
       return "Autumn";
@@ -28,7 +29,7 @@ public class FabricSeasonsHelper {
   }
 
   public static String getCurrentSeason(Player player) {
-    Season currentSeasonState = FabricSeasons.getCurrentSeason(player.level());
+    Season currentSeasonState = FabricSeasons.getCurrentSeason(player.level);
 
     if (currentSeasonState.toString().equalsIgnoreCase("fall")) {
       return "Autumn";
@@ -41,7 +42,7 @@ public class FabricSeasonsHelper {
   public static long getDate(Player player) {
     long dayLength = Config.getDayLength();
     long seasonLength = FabricSeasons.CONFIG.getSpringLength();
-    long worldTime = Math.toIntExact(player.level().getDayTime());
+    long worldTime = Math.toIntExact(player.level.getDayTime());
 
     // Get the current day of month from the system. Used with fabric seasons' system time tied with season option
     if (FabricSeasonsHelper.isSeasonTiedWithSystemTime) {

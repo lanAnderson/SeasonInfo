@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sereneseasons.init.ModConfig;
+import sereneseasons.config.ServerConfig;
 
 public class Common {
   public static final String MOD_ID = "seasonhud";
@@ -106,7 +106,7 @@ public class Common {
       return !FabricSeasons.CONFIG.isValidInDimension(currentDim);
     }
     if (Common.sereneSeasonsLoaded()) {
-      return !ModConfig.seasons.isDimensionWhitelisted(currentDim);
+      return !ServerConfig.isDimensionWhitelisted(currentDim);
     }
     else {
       return false;
