@@ -8,7 +8,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'seasonhud'
+rootProject.name = 'seasonhud-1.19.x'
 
 include("common")
 include("fabric")
