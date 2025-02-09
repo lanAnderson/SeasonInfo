@@ -26,24 +26,30 @@ public class MapAtlases implements HudRenderCallback {
     if (CurrentMinimap.mapAtlasesLoaded()) {
       if (mc.player == null) {
         return false;
-      } else if (MapAtlasesMod.CONFIG != null && !MapAtlasesMod.CONFIG.drawMiniMapHUD) {
+      }
+      else if (MapAtlasesMod.CONFIG != null && !MapAtlasesMod.CONFIG.drawMiniMapHUD) {
         return false;
-      } else if (mc.options.renderDebug) {
+      }
+      else if (mc.options.renderDebug) {
         return false;
-      } else {
+      }
+      else {
         ItemStack atlas = MapAtlasesAccessUtils.getAtlasFromPlayerByConfig(mc.player);
         if (atlas.isEmpty()) {
           return false;
-        } else if (MapAtlasesClient.currentMapStateId == null) {
+        }
+        else if (MapAtlasesClient.currentMapStateId == null) {
           return false;
-        } else {
+        }
+        else {
           return atlas.getTag() != null && atlas.getTag().contains("maps") && Arrays.stream(
               atlas.getTag().getIntArray("maps")).anyMatch((i) -> {
             return i == MapAtlasesAccessUtils.getMapIntFromString(MapAtlasesClient.currentMapStateId);
           });
         }
       }
-    } else {
+    }
+    else {
       return false;
     }
   }
@@ -84,7 +90,8 @@ public class MapAtlases implements HudRenderCallback {
 
           if (hasNegative && y < 2 * textHeightOffset) {
             y += 2 * textHeightOffset - y;
-          } else if (hasBeneficial && y < textHeightOffset) {
+          }
+          else if (hasBeneficial && y < textHeightOffset) {
             y += textHeightOffset - y;
           }
         }

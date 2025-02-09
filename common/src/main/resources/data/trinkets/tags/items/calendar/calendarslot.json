@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "seasonsextras:season_calendar",
+      "id": "seasons:season_calendar",
       "required": false
     },
     {

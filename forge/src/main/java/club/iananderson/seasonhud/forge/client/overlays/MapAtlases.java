@@ -30,10 +30,12 @@ public class MapAtlases implements IIngameOverlay {
 
       if (!mapAtlasesConfig) {
         return false;
-      } else {
+      }
+      else {
         return !mc.options.renderDebug && atlas.getCount() > 0;
       }
-    } else {
+    }
+    else {
       return false;
     }
   }

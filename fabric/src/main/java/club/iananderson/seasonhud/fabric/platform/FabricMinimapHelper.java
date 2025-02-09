@@ -4,6 +4,7 @@ import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.platform.services.IMinimapHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import pepjebs.mapatlases.MapAtlasesMod;
 import pepjebs.mapatlases.utils.MapAtlasesAccessUtils;
 

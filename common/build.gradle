@@ -30,6 +30,5 @@ dependencies {
     modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
     modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
     modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
-    modCompileOnly "maven.modrinth:fabric-seasons-extras:${project.fabric_seasons_extras_version}"
     modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
 }
