@@ -28,9 +28,10 @@ public class SeasonHudForge {
 //      Common.LOG.info("Talking to Curios");
 //      CuriosCompat.init();
 //    }
-    else if (Common.accessoriesLoaded()) {
+//    else if (Common.accessoriesLoaded()) {
 //      Common.LOG.info("Talking to Accessories");
 //      AccessoriesCompat.init();
+//    }
 //    }
   }
 

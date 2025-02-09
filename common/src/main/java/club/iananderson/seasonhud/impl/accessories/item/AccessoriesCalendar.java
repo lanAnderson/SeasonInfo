@@ -1,6 +1,7 @@
 package club.iananderson.seasonhud.impl.accessories.item;
 
 import club.iananderson.seasonhud.impl.seasons.CommonSeasonHelper;
+import club.iananderson.seasonhud.platform.Services;
 import io.wispforest.accessories.api.AccessoriesAPI;
 import io.wispforest.accessories.api.Accessory;
 import io.wispforest.accessories.api.AccessoryRegistry;
@@ -19,7 +20,7 @@ public class AccessoriesCalendar implements Accessory {
       AccessoriesAPI.registerAccessory(CommonSeasonHelper.calendar(), new AccessoriesCalendar());
 
     } else {
-      AccessoryRegistry.register(Services.SEASON.calendar(), new AccessoriesCalendar());
+      AccessoryRegistry.register(CommonSeasonHelper.calendar(), new AccessoriesCalendar());
     }
   }
 

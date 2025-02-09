@@ -9,13 +9,6 @@ import sereneseasons.init.ModConfig;
 
 public class NeoForgeMinimapHelper implements IMinimapHelper {
   @Override
-  public boolean hideHudInCurrentDimension() {
-    ResourceKey<Level> currentDim = Objects.requireNonNull(Minecraft.getInstance().level).dimension();
-
-    return !ModConfig.seasons.isDimensionWhitelisted(currentDim);
-  }
-
-  @Override
   public boolean hideMapAtlases() {
     return false;
   }

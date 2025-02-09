@@ -29,11 +29,11 @@ public class SeasonHudNeoForge {
   }
 
   public static void onInitialize(FMLCommonSetupEvent event) {
-    if (Common.curiosLoaded()) {
+    if (Common.curiosLoaded() && !Common.accessoriesLoaded()) {
       Common.LOG.info("Talking to Curios");
       CuriosCompat.init();
     } else if (Common.accessoriesLoaded()) {
-      Common.LOG.info("Talking to Accessories " + Services.PLATFORM.getModVersion("accessories"));
+      Common.LOG.info("Talking to Accessories {}", Services.PLATFORM.getModVersion("accessories"));
       AccessoriesCompat.init();
     }
   }
