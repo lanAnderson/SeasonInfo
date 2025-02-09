@@ -134,7 +134,7 @@ dependencies {
 
     // Season Mod Dev Tests (Forge)
     // See root gradle.properties to choose which to use at runtime.
-    switch (project.season_mod.toLowerCase(Locale.ROOT)) {
+    switch (project.season_mod_forge.toLowerCase(Locale.ROOT)) {
         case "serene":
             modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
             modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
