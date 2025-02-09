@@ -1,5 +1,6 @@
 package club.iananderson.seasonhud.forge.platform;
 
+import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.platform.services.IPlatformHelper;
 import java.util.Optional;
 import net.minecraft.world.item.Item;
@@ -35,10 +36,5 @@ public class ForgePlatformHelper implements IPlatformHelper {
   @Override
   public boolean isDevelopmentEnvironment() {
     return !FMLLoader.isProduction();
-  }
-
-  @Override
-  public Item calendar() {
-    return SSItems.CALENDAR.get();
   }
 }

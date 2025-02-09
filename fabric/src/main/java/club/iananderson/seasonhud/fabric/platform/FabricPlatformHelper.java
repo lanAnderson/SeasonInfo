@@ -36,12 +36,4 @@ public class FabricPlatformHelper implements IPlatformHelper {
   public boolean isDevelopmentEnvironment() {
     return FabricLoader.getInstance().isDevelopmentEnvironment();
   }
-
-  @Override
-  public Item calendar() {
-    if (Common.extrasLoaded()){
-      return FabricSeasonsExtras.SEASON_CALENDAR_ITEM;
-    }
-    else return null;
-  }
 }

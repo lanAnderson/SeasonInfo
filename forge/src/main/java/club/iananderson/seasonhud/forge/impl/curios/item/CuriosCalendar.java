@@ -1,6 +1,6 @@
 package club.iananderson.seasonhud.forge.impl.curios.item;
 
-import club.iananderson.seasonhud.impl.seasons.CommonSeasonHelper;
+import club.iananderson.seasonhud.impl.seasons.mods.SereneSeasonsHelper;
 import club.iananderson.seasonhud.platform.Services;
 import javax.annotation.Nonnull;
 import net.minecraft.core.Direction;
@@ -9,7 +9,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
-import sereneseasons.api.SSItems;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
@@ -20,7 +19,7 @@ public class CuriosCalendar implements ICurioItem {
 
   public static ICapabilityProvider initCapabilities() {
     ICurio curio = new ICurio() {
-      final ItemStack stack = Services.PLATFORM.calendar().getDefaultInstance();
+      final ItemStack stack = SereneSeasonsHelper.CALENDAR.getDefaultInstance();
 
       @Override
       public ItemStack getStack() {

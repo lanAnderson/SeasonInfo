@@ -10,12 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 
 public class FabricSeasonsHelper {
-  private FabricSeasonsHelper(){
-  }
-
-  public static Item CALENDAR = Services.PLATFORM.calendar();
-
+  public static Item CALENDAR = FabricSeasonsExtras.SEASON_CALENDAR_ITEM;
   public static boolean isSeasonTiedWithSystemTime = FabricSeasons.CONFIG.isSeasonTiedWithSystemTime();
+
+  private FabricSeasonsHelper() {
+  }
 
   public static String getCurrentSubSeason(Player player) {
     Season currentSeasonState = FabricSeasons.getCurrentSeason(player.level);
