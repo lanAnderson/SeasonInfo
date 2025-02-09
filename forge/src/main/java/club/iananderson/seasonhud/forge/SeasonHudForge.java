@@ -17,7 +17,7 @@ public class SeasonHudForge {
     MinecraftForge.EVENT_BUS.register(this);
     Common.init();
 
-    NeoForgeConfigRegistry.INSTANCE.register(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "SeasonHUD-client.toml");
+    NeoForgeConfigRegistry.INSTANCE.register(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "seasonhud-client.toml");
 
     modEventBus.addListener(SeasonHudForge::onInitialize);
     modEventBus.addListener(SeasonHudForge::ftbChunkSetup);
@@ -27,7 +27,8 @@ public class SeasonHudForge {
 //    if (Common.curiosLoaded()) {
 //      Common.LOG.info("Talking to Curios");
 //      CuriosCompat.init();
-//    } else if (Common.accessoriesLoaded()) {
+//    }
+    else if (Common.accessoriesLoaded()) {
 //      Common.LOG.info("Talking to Accessories");
 //      AccessoriesCompat.init();
 //    }

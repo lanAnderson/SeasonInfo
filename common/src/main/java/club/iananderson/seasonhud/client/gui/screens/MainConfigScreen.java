@@ -97,14 +97,12 @@ public class MainConfigScreen extends SeasonHudScreen {
     int row = 0;
     seasonButton = MenuButton.builder(MenuButtons.SEASON, b -> SeasonOptionsScreen.getInstance(this).open())
         .withTooltip(Tooltip.create(Component.translatable("menu.seasonhud.main.season.tooltip")))
-        .withPos(leftButtonX, (buttonStartY + (row * yOffset)))
-        .withWidth(BUTTON_WIDTH)
+        .withPos(leftButtonX, (buttonStartY + (row * yOffset))).withWidth(BUTTON_WIDTH)
         .build();
 
     colorButton = MenuButton.builder(MenuButtons.COLORS, b -> ColorScreen.getInstance(this).open())
         .withTooltip(Tooltip.create(Component.translatable("menu.seasonhud.main.color.tooltip")))
-        .withPos(rightButtonX, (buttonStartY + (row * yOffset)))
-        .withWidth(BUTTON_WIDTH)
+        .withPos(rightButtonX, (buttonStartY + (row * yOffset))).withWidth(BUTTON_WIDTH)
         .build();
 
     row = 2;

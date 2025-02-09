@@ -105,7 +105,7 @@ dependencies {
 
     // Season Mod Dev Tests (Fabric)
     // See root gradle.properties to choose which to use at runtime.
-    switch (project.season_mod.toLowerCase(Locale.ROOT)) {
+    switch (project.season_mod_fabric.toLowerCase(Locale.ROOT)) {
         case "serene":
             modImplementation("maven.modrinth:serene-seasons:${project.serene_seasons_version}-fabric")
             modImplementation("maven.modrinth:glitchcore:${project.glitchcore_version}-fabric")

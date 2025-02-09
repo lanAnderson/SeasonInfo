@@ -11,7 +11,9 @@ dependencies {
     api "fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:${project.forge_config_api_port_version}"
     api group: 'info.journeymap', name: 'journeymap-api-common', version: project.journeymap_api_version, changing: true
     compileOnly "com.github.glitchfiend:GlitchCore-common:${minecraft_version}-${glitchcore_version}"
-    modCompileOnly("io.wispforest:accessories-common:${project.accessories_version}-mojmap")
+    modCompileOnly "io.wispforest:accessories-common:${project.accessories_version}-mojmap"
+    modCompileOnly "maven.modrinth:accessories-cc-layer:7.4.0-beta.18"
+    modCompileOnly "dev.emi:trinkets:${project.trinkets_version}"
 
     // Minimap Mods
     // Not used in common unless they are actually  loaded.
@@ -19,4 +21,12 @@ dependencies {
     modCompileOnly "curse.maven:ftb-chunks-forge-314906:${project.ftb_chunks_neoforge_version}"
     modCompileOnly "curse.maven:ftb-library-forge-404465:${project.ftb_library_neoforge_version}"
     modCompileOnly "maven.modrinth:journeymap:1.21.4-${project.journeymap_version}+neoforge"
+
+    //Season Mods
+    // Not used in common unless they are actually  loaded.
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-neoforge"
+    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-neoforge"
+    modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
+    modCompileOnly "maven.modrinth:fabric-seasons-extras:${project.fabric_seasons_extras_version}"
+    modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
 }

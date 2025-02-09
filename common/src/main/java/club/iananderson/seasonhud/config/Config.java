@@ -54,7 +54,7 @@ public class Config {
 
     builder.push("HUD");
     hudLocation = builder.comment("Where to display the Hud when no minimap is installed.\n" + "Default is TOP_LEFT.")
-                         .defineEnum("hud_location", Location.TOP_LEFT);
+        .defineEnum("hud_location", Location.TOP_LEFT);
 
     hudX = builder.comment(
         "The horizontal offset of the HUD when no minimap is installed (in pixels)\n" + "Default is " + DEFAULT_X_OFFSET
@@ -66,7 +66,7 @@ public class Config {
 
     builder.push("Colors");
     enableSeasonNameColor = builder.comment("Display the season name in a color?\n" + "(true/false)")
-                                   .define("season_name_color", true);
+        .define("season_name_color", true);
 
     springColor = builder.comment(
         "The RGB color (decimal) for spring.\n" + "(256 * 256 * r) + (256 * g) + (b) is the formula.\n" + "Default is "
@@ -100,8 +100,8 @@ public class Config {
             + "Default is false.").define("need_calendar", false);
 
     calanderDetailMode = builder.comment(
-                                    "Having the calendar item shows the detailed version of the HUD" + "Default is false.")
-                                .define("calendar_detail", false);
+            "Having the calendar item shows the detailed version of the HUD" + "Default is false.")
+        .define("calendar_detail", false);
 
     showTropicalSeason = builder.comment("Show the Tropical seasons (Wet/Dry) in Tropical Biomes.\n"
                                              + "Will not change the season behavior in the biomes.\n" + "(true/false)\n"
@@ -111,18 +111,19 @@ public class Config {
         "Show sub-season (i.e. Early Winter, Mid Autumn, Late Spring) instead of basic season?\n" + "(true/false)\n"
             + " Default is true.").define("enable_show_sub_season", true);
 
-    if (Common.sereneSeasonsLoaded()) {
-      showDay = builder.comment("Show the day of the current Season/Sub-Season?\n" + "Default is SHOW_DAY.")
-                       .defineEnum("enable_show_day", ShowDay.SHOW_DAY,
-                                   Arrays.asList(ShowDay.NONE, ShowDay.SHOW_DAY, ShowDay.SHOW_WITH_TOTAL_DAYS));
-    }
-
     if (Common.fabricSeasonsLoaded()) {
       showDay = builder.comment("Show the current day of the season/sub-season?\n" + "Default is SHOW_DAY.")
-                       .defineEnum("enable_show_day", ShowDay.SHOW_DAY,
-                                   Arrays.asList(ShowDay.NONE, ShowDay.SHOW_DAY, ShowDay.SHOW_WITH_TOTAL_DAYS,
-                                                 ShowDay.SHOW_WITH_MONTH));
+          .defineEnum("enable_show_day", ShowDay.SHOW_DAY,
+                      Arrays.asList(ShowDay.NONE, ShowDay.SHOW_DAY, ShowDay.SHOW_WITH_TOTAL_DAYS,
+                                    ShowDay.SHOW_WITH_MONTH));
     }
+
+    if (!Common.fabricSeasonsLoaded()) {
+      showDay = builder.comment("Show the day of the current Season/Sub-Season?\n" + "Default is SHOW_DAY.")
+          .defineEnum("enable_show_day", ShowDay.SHOW_DAY,
+                      Arrays.asList(ShowDay.NONE, ShowDay.SHOW_DAY, ShowDay.SHOW_WITH_TOTAL_DAYS));
+    }
+
     dayLength = builder.comment(
         "Change if you are using a Minecraft day length other than vanilla value and using Fabric Seasons.\n"
             + "Default Minecraft day is 24000.").defineInRange("day_length", 24000, 0, 2147483647);
@@ -130,11 +131,11 @@ public class Config {
 
     builder.push("Minimap");
     enableMinimapIntegration = builder.comment(
-                                          "Enable integration with minimap mods?\n" + "(true/false)\n" + "Default is true.")
-                                      .define("enable_minimap_integration", true);
+            "Enable integration with minimap mods?\n" + "(true/false)\n" + "Default is true.")
+        .define("enable_minimap_integration", true);
     showDefaultWhenMinimapHidden = builder.comment(
-                                              "Show the default SeasonHUD display when the minimap is hidden?\n" + "(true/false)\n" + "Default is false.")
-                                          .define("enable_show_minimap_hidden", false);
+            "Show the default SeasonHUD display when the minimap is hidden?\n" + "(true/false)\n" + "Default is false.")
+        .define("enable_show_minimap_hidden", false);
     builder.pop();
     builder.pop();
   }
@@ -160,7 +161,8 @@ public class Config {
   public static int getHudX() {
     if (Minecraft.getInstance().player == null) {
       return DEFAULT_X_OFFSET;
-    } else {
+    }
+    else {
       return hudX.get();
     }
   }
@@ -172,7 +174,8 @@ public class Config {
   public static int getHudY() {
     if (Minecraft.getInstance().player == null) {
       return DEFAULT_Y_OFFSET;
-    } else {
+    }
+    else {
       return hudY.get();
     }
   }

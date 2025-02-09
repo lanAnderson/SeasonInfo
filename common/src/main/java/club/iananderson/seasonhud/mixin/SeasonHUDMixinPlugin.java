@@ -47,7 +47,8 @@ public class SeasonHUDMixinPlugin implements IMixinConfigPlugin {
     Preconditions.checkState(mixinClassName.startsWith(prefix), "Unexpected prefix on " + mixinClassName);
     if (mixinClassName.startsWith("club.iananderson.seasonhud.mixin.xaero")) {
       return HAS_XAERO;
-    } else {
+    }
+    else {
       return true;
     }
   }

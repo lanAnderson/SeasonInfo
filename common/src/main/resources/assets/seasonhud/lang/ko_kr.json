@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "초겨울",
   "desc.seasonhud.season.winter.late": "늦겨울",
   "desc.seasonhud.season.winter.mid": "한겨울",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "#일",
   "desc.seasonhud.showday.month": "(월), #",
   "desc.seasonhud.showday.none": "끔",

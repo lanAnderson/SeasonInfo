@@ -1,4 +1,5 @@
 {
+  "replace": true,
   "entities": [
     "#accessories:defaulted_targets"
   ],
