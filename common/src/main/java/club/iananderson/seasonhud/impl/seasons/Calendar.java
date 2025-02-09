@@ -2,15 +2,14 @@ package club.iananderson.seasonhud.impl.seasons;
 
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
-import dev.emi.trinkets.api.TrinketComponent;
+import club.iananderson.seasonhud.platform.Services;
 import dev.emi.trinkets.api.TrinketsApi;
-import java.util.List;
-import java.util.Optional;
+import java.util.Collections;
+import java.util.Set;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
+import net.minecraft.world.item.Item;
 
 public class Calendar {
   private Calendar() {
@@ -29,24 +28,25 @@ public class Calendar {
       return false;
     }
 
+    Set<Item> curioSet = Collections.singleton(item);
+
     if (Common.curiosLoaded() && !Common.accessoriesLoaded()) {
-      List<SlotResult> curiosInventory = CuriosApi.getCuriosHelper().findCurios(player, item);
-      curioEquipped = !curiosInventory.isEmpty();
+      curioEquipped = Services.PLATFORM.curiosFound(player, item);
     }
 
     if (Common.trinketsLoaded() && !Common.accessoriesLoaded()) {
-      Optional<TrinketComponent> trinketInventory = TrinketsApi.getTrinketComponent(player);
+      Container trinketInventory = TrinketsApi.getTrinketComponent(player).getInventory();
 
-      if (trinketInventory.isPresent()) {
-        curioEquipped = trinketInventory.get().isEquipped(item);
+      if (!trinketInventory.isEmpty()) {
+        curioEquipped = trinketInventory.hasAnyOf(curioSet);
       }
     }
 
     return curioEquipped;
   }
 
-  private static boolean findCalendar(Player player, ItemStack item) {
-    boolean invCalenderFound = player.inventory.contains(item);
+  private static boolean findCalendar(Player player, Item item) {
+    boolean invCalenderFound = player.inventory.contains(item.getDefaultInstance());
     boolean curiosCalenderFound = Calendar.findCuriosCalendar(player, item);
 
     return invCalenderFound | curiosCalenderFound;
@@ -54,11 +54,7 @@ public class Calendar {
 
   private static boolean calendarFound() {
     Minecraft mc = Minecraft.getInstance();
-    ItemStack calendar = CommonSeasonHelper.calendar();
-
-    if (!Common.extrasLoaded()) {
-      return true;
-    }
+    Item calendar = CommonSeasonHelper.calendar();
 
     if (mc.level == null || mc.player == null || calendar == null) {
       return false;

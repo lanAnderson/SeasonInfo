@@ -1,8 +1,6 @@
 package club.iananderson.seasonhud.fabric.platform;
 
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
-import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap.Minimap;
-import club.iananderson.seasonhud.platform.Services;
 import club.iananderson.seasonhud.platform.services.IMinimapHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
@@ -32,5 +30,10 @@ public class FabricMinimapHelper implements IMinimapHelper {
     else {
       return false;
     }
+  }
+
+  @Override
+  public boolean hideHudInCurrentDimension() {
+    return false;
   }
 }

@@ -56,7 +56,8 @@ public class VoxelMapMixin {
       if (this.options.coords) {
         textStart -= 5;
       }
-    } else {
+    }
+    else {
       textStart = y + 32 + 4;
       if (this.options.coords) {
         textStart += 10;

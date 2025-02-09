@@ -39,7 +39,7 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
     //Serene Seasons
-    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
 //    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
 //    compileOnly("net.jodah:typetools:0.6.3")
 
@@ -66,7 +66,7 @@ dependencies {
     modCompileOnly "curse.maven:voxelmap-225179:${project.voxelmap_forge_version}"
 
     //Curios + Accessories
-    modCompileOnly "top.theillusivec4.curios:curios-forge:${project.minecraft_version}-${project.curios_version}:api"
+    modCompileOnly "top.theillusivec4.curios:curios-forge:${project.curios_version}:api"
 
 //    //ModernUI
 //    forgeRuntimeLibrary("icyllis.modernui:ModernUI-Core:1.7.0.104") {
@@ -118,7 +118,7 @@ dependencies {
     // See root gradle.properties to choose which to use at runtime.
     switch (project.season_mod_forge.toLowerCase(Locale.ROOT)) {
         case "serene":
-            modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+            modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}"
 //            modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
 //            implementation("net.jodah:typetools:0.6.3")
             break

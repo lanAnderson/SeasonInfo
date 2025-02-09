@@ -57,7 +57,8 @@ public class SeasonHUDMixinPlugin implements IMixinConfigPlugin {
     }
     else if (mixinClassName.startsWith("club.iananderson.seasonhud.forge.mixin.voxel")) {
       return HAS_VOXEL;
-    } else {
+    }
+    else {
       return true;
     }
   }

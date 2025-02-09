@@ -51,13 +51,17 @@ public class SeasonHUDMixinPlugin implements IMixinConfigPlugin {
     Preconditions.checkState(mixinClassName.startsWith(prefix), "Unexpected prefix on " + mixinClassName);
     if (mixinClassName.startsWith("club.iananderson.seasonhud.fabric.mixin.xaero")) {
       return HAS_XAERO;
-    } else if (mixinClassName.startsWith("club.iananderson.seasonhud.fabric.mixin.ftbchunks")) {
+    }
+    else if (mixinClassName.startsWith("club.iananderson.seasonhud.fabric.mixin.ftbchunks")) {
       return HAS_FTB;
-    } else if (mixinClassName.startsWith("club.iananderson.seasonhud.fabric.mixin.voxel")) {
+    }
+    else if (mixinClassName.startsWith("club.iananderson.seasonhud.fabric.mixin.voxel")) {
       return HAS_VOXEL;
-    } else if (mixinClassName.startsWith("club.iananderson.seasonhud.mixin.ftbchunks")) {
+    }
+    else if (mixinClassName.startsWith("club.iananderson.seasonhud.mixin.ftbchunks")) {
       return HAS_FTB;
-    } else {
+    }
+    else {
       return true;
     }
   }

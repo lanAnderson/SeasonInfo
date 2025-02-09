@@ -68,7 +68,8 @@ public class CycleButton<T> extends AbstractButton implements TooltipAccessor {
   public void onPress() {
     if (Screen.hasShiftDown()) {
       this.cycleValue(-1);
-    } else {
+    }
+    else {
       this.cycleValue(1);
     }
 
@@ -90,7 +91,8 @@ public class CycleButton<T> extends AbstractButton implements TooltipAccessor {
   public boolean mouseScrolled(double d, double e, double f) {
     if (f > 0.0) {
       this.cycleValue(-1);
-    } else if (f < 0.0) {
+    }
+    else if (f < 0.0) {
       this.cycleValue(1);
     }
 
@@ -234,7 +236,8 @@ public class CycleButton<T> extends AbstractButton implements TooltipAccessor {
       List<T> list = this.values.getDefaultList();
       if (list.isEmpty()) {
         throw new IllegalStateException("No values for cycle button");
-      } else {
+      }
+      else {
         T object = this.initialValue != null ? this.initialValue : list.get(this.initialIndex);
         Component component2 = (Component) this.valueStringifier.apply(object);
         Component component3 = this.displayOnlyValue ? component2 : optionNameValue(component, component2);

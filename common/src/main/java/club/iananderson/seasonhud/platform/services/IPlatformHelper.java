@@ -1,5 +1,8 @@
 package club.iananderson.seasonhud.platform.services;
 
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+
 public interface IPlatformHelper {
 
   /**
@@ -25,4 +28,12 @@ public interface IPlatformHelper {
    * @return True if in a development environment, false otherwise.
    */
   boolean isDevelopmentEnvironment();
+
+  boolean curiosFound(Player player, Item item);
+
+  String getCurrentSeason(Player player);
+
+  String getCurrentSubSeason(Player player);
+
+  long getSeasonDate(Player player);
 }

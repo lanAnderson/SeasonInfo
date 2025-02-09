@@ -20,7 +20,8 @@ public class Services {
 
     if (iterator.hasNext()) {
       findFirst = Optional.of(iterator.next());
-    } else {
+    }
+    else {
       findFirst = Optional.empty();
     }
 

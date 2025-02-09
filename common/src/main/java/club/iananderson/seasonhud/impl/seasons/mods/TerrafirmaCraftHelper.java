@@ -33,26 +33,29 @@ public class TerrafirmaCraftHelper {
     List<Month> SEASON = new ArrayList<>();
 
     switch (season) {
-      case WINTER -> {
+      case WINTER:
         SEASON.add(SubSeason.EARLY.getWinter());
         SEASON.add(SubSeason.MID.getWinter());
         SEASON.add(SubSeason.LATE.getWinter());
-      }
-      case SPRING -> {
+        break;
+
+      case SPRING:
         SEASON.add(SubSeason.EARLY.getSpring());
         SEASON.add(SubSeason.MID.getSpring());
         SEASON.add(SubSeason.LATE.getSpring());
-      }
-      case SUMMER -> {
+        break;
+
+      case SUMMER:
         SEASON.add(SubSeason.EARLY.getSummer());
         SEASON.add(SubSeason.MID.getSummer());
         SEASON.add(SubSeason.LATE.getSummer());
-      }
-      case FALL -> {
+        break;
+
+      case FALL:
         SEASON.add(SubSeason.EARLY.getAutumn());
         SEASON.add(SubSeason.MID.getAutumn());
         SEASON.add(SubSeason.LATE.getAutumn());
-      }
+        break;
     }
 
     return SEASON;
@@ -63,26 +66,30 @@ public class TerrafirmaCraftHelper {
     HashMap<Month, String> SEASON = new HashMap<>();
 
     switch (season) {
-      case WINTER -> {
+      case WINTER:
         SEASON.put(SubSeason.EARLY.getWinter(), SubSeason.EARLY.getPrefix());
         SEASON.put(SubSeason.MID.getWinter(), SubSeason.MID.getPrefix());
         SEASON.put(SubSeason.LATE.getWinter(), SubSeason.LATE.getPrefix());
-      }
-      case SPRING -> {
+        break;
+
+      case SPRING:
         SEASON.put(SubSeason.EARLY.getSpring(), SubSeason.EARLY.getPrefix());
         SEASON.put(SubSeason.MID.getSpring(), SubSeason.MID.getPrefix());
         SEASON.put(SubSeason.LATE.getSpring(), SubSeason.LATE.getPrefix());
-      }
-      case SUMMER -> {
+        break;
+
+      case SUMMER:
         SEASON.put(SubSeason.EARLY.getSummer(), SubSeason.EARLY.getPrefix());
         SEASON.put(SubSeason.MID.getSummer(), SubSeason.MID.getPrefix());
         SEASON.put(SubSeason.LATE.getSummer(), SubSeason.LATE.getPrefix());
-      }
-      case FALL -> {
+        break;
+
+      case FALL:
         SEASON.put(SubSeason.EARLY.getAutumn(), SubSeason.EARLY.getPrefix());
         SEASON.put(SubSeason.MID.getAutumn(), SubSeason.MID.getPrefix());
         SEASON.put(SubSeason.LATE.getAutumn(), SubSeason.LATE.getPrefix());
-      }
+        break;
+
     }
 
     return SEASON.get(currentMonth);
@@ -188,4 +195,5 @@ public class TerrafirmaCraftHelper {
       return this.autumn;
     }
   }
+
 }

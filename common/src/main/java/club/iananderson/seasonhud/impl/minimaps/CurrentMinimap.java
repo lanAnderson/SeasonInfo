@@ -4,10 +4,16 @@ import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.seasons.Calendar;
 import club.iananderson.seasonhud.platform.Services;
+import com.mamiyaotaru.voxelmap.MapSettingsManager;
+import com.mamiyaotaru.voxelmap.VoxelMap;
+import dev.ftb.mods.ftbchunks.client.FTBChunksClientConfig;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.ChatScreen;
+import net.minecraft.client.gui.screens.DeathScreen;
+import xaero.common.HudMod;
 
 public class CurrentMinimap {
   private static boolean minimapLoaded(Minimap minimap) {
@@ -47,6 +53,41 @@ public class CurrentMinimap {
     return getLoadedMinimaps().isEmpty();
   }
 
+  public static boolean hiddenMinimap(Minimap minimap) {
+    Minecraft mc = Minecraft.getInstance();
+    boolean hidden = false;
+
+    if (mc.level == null || mc.player == null) {
+      return false;
+    }
+
+    switch (minimap) {
+      case FTB_CHUNKS:
+        hidden = !FTBChunksClientConfig.MINIMAP_ENABLED.get() || mc.options.renderDebug;
+        break;
+
+      case XAERO:
+        hidden = !HudMod.INSTANCE.getSettings().getMinimap() || mc.options.renderDebug || !(mc.screen == null
+            || mc.screen instanceof ChatScreen || mc.screen instanceof DeathScreen);
+        break;
+
+      case XAERO_FAIRPLAY:
+        hidden = !HudMod.INSTANCE.getSettings().getMinimap() || mc.options.renderDebug || !(mc.screen == null
+            || mc.screen instanceof ChatScreen || mc.screen instanceof DeathScreen);
+        break;
+
+      case MAP_ATLASES:
+        hidden = Services.MINIMAP.hideMapAtlases();
+        break;
+
+      case VOXELMAP:
+        MapSettingsManager voxelOptions = VoxelMap.getInstance().getMapOptions();
+        hidden = voxelOptions.hide || (!voxelOptions.showUnderMenus && (mc.screen != null || mc.options.renderDebug));
+        break;
+    }
+    return hidden;
+  }
+
   /* Todo:
    ** Double check all logic
    ** Add option to display current loaded integration
@@ -62,7 +103,7 @@ public class CurrentMinimap {
     List<Minimap> loadedMinimaps = CurrentMinimap.getLoadedMinimaps();
     List<Boolean> hiddenMinimaps = new ArrayList<>();
 
-    loadedMinimaps.forEach(minimap -> hiddenMinimaps.add(Services.MINIMAP.hiddenMinimap(minimap)));
+    loadedMinimaps.forEach(minimap -> hiddenMinimaps.add(CurrentMinimap.hiddenMinimap(minimap)));
 
     return Common.allTrue(hiddenMinimaps);
   }
@@ -79,7 +120,7 @@ public class CurrentMinimap {
     }
 
     boolean enabled = Config.getEnableMod() && Config.getEnableMinimapIntegration();
-    boolean hiddenMinimap = Common.hideHudInCurrentDimension() || Services.MINIMAP.hiddenMinimap(minimap);
+    boolean hiddenMinimap = Common.hideHudInCurrentDimension() || CurrentMinimap.hiddenMinimap(minimap);
 
     return enabled && Calendar.validNeedCalendar() && !mc.options.hideGui && !hiddenMinimap;
   }

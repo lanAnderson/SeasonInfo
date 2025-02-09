@@ -3,19 +3,14 @@ package club.iananderson.seasonhud;
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.minimaps.CurrentMinimap;
 import club.iananderson.seasonhud.platform.Services;
-import io.github.lucaargolo.seasons.FabricSeasons;
 import java.util.List;
-import java.util.Objects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.DeathScreen;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sereneseasons.config.ServerConfig;
 
 public class Common {
   public static final String MOD_ID = "seasonhud";
@@ -43,7 +38,7 @@ public class Common {
     sereneSeasonsLoaded = Services.PLATFORM.isModLoaded("sereneseasons");
     fabricSeasonsLoaded = Services.PLATFORM.isModLoaded("seasons");
     terrafirmacraftLoaded = Services.PLATFORM.isModLoaded("tfc");
-    extrasLoaded = (Services.PLATFORM.isModLoaded("seasonsextras") || sereneSeasonsLoaded) && !terrafirmacraftLoaded;
+    extrasLoaded = (fabricSeasonsLoaded || sereneSeasonsLoaded) && !terrafirmacraftLoaded;
     curiosLoaded = Services.PLATFORM.isModLoaded("curios");
     trinketsLoaded = Services.PLATFORM.isModLoaded("trinkets");
     accessoriesLoaded = Services.PLATFORM.isModLoaded("accessories");
@@ -103,16 +98,7 @@ public class Common {
    * @return True if the current dimension is whitelisted in the season mod's config.
    */
   public static boolean hideHudInCurrentDimension() {
-    ResourceKey<Level> currentDim = Objects.requireNonNull(Minecraft.getInstance().level).dimension();
-    if (Common.fabricSeasonsLoaded()) {
-      return !FabricSeasons.CONFIG.isValidInDimension(currentDim);
-    }
-    if (Common.sereneSeasonsLoaded()) {
-      return !ServerConfig.isDimensionWhitelisted(currentDim);
-    }
-    else {
-      return false;
-    }
+    return Services.MINIMAP.hideHudInCurrentDimension();
   }
 
   public static boolean allTrue(List<Boolean> values) {
