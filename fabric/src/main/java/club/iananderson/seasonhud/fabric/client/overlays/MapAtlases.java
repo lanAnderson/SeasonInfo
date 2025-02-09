@@ -28,10 +28,12 @@ public class MapAtlases implements HudRenderCallback {
       ItemStack atlas = MapAtlasesAccessUtils.getAtlasFromPlayerByConfig(inv);
       if (MapAtlasesMod.CONFIG != null && !MapAtlasesMod.CONFIG.drawMiniMapHUD) {
         return false;
-      } else {
+      }
+      else {
         return !mc.options.renderDebug && atlas.getCount() > 0;
       }
-    } else {
+    }
+    else {
       return false;
     }
   }

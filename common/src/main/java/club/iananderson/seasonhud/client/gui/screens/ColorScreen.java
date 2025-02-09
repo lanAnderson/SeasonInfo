@@ -77,7 +77,8 @@ public class ColorScreen extends SeasonHudScreen {
     int boxWidth;
     if (this.width < widgetTotalSize) {
       boxWidth = 60;
-    } else {
+    }
+    else {
       boxWidth = 80;
     }
 
@@ -108,17 +109,19 @@ public class ColorScreen extends SeasonHudScreen {
         + RgbSlider.SLIDER_PADDING);
 
     defaultButton = DefaultColorButton.builder(colorBox, press -> {
-      int defaultColorInt = season.getDefaultColor();
+          int defaultColorInt = season.getDefaultColor();
 
-      if (colorBox.getNewColor() != defaultColorInt) {
-        redSlider.setSliderValue(defaultColorInt);
-        greenSlider.setSliderValue(defaultColorInt);
-        blueSlider.setSliderValue(defaultColorInt);
-        colorBox.setValue(String.valueOf(defaultColorInt));
+          if (colorBox.getNewColor() != defaultColorInt) {
+            redSlider.setSliderValue(defaultColorInt);
+            greenSlider.setSliderValue(defaultColorInt);
+            blueSlider.setSliderValue(defaultColorInt);
+            colorBox.setValue(String.valueOf(defaultColorInt));
 
-        Rgb.setRgb(season, defaultColorInt);
-      }
-    }).withPos(x, y).build();
+            Rgb.setRgb(season, defaultColorInt);
+          }
+        })
+        .withPos(x, y)
+        .build();
 
     seasonBoxes.add(colorBox);
 

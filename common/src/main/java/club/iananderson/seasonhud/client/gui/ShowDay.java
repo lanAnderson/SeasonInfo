@@ -1,6 +1,6 @@
 package club.iananderson.seasonhud.client.gui;
 
-import club.iananderson.seasonhud.platform.Services;
+import club.iananderson.seasonhud.impl.seasons.CommonSeasonHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +31,7 @@ public enum ShowDay {
   public static List<ShowDay> getValues() {
     List<ShowDay> values = new ArrayList<>(Arrays.asList(ShowDay.values()));
 
-    if (!Services.SEASON.isSeasonTiedWithSystemTime()) {
+    if (!CommonSeasonHelper.isSeasonTiedWithSystemTime()) {
       values.remove(SHOW_WITH_MONTH.getId());
     }
 

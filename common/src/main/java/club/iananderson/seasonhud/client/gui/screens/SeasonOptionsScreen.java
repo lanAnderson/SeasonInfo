@@ -192,7 +192,7 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
 
     widgets.addAll(Arrays.asList(hudLocationButton, xSlider, ySlider, showDayButton, seasonColorButton));
 
-    if (Common.sereneSeasonsLoaded()) {
+    if (Common.sereneSeasonsLoaded() || Common.terrafirmacraftLoaded()) {
       row = 2;
       showSubSeasonButton = CycleButton.onOffBuilder(showSubSeason)
           .create(leftButtonX, (buttonStartY + (row * yOffset)), BUTTON_WIDTH, BUTTON_HEIGHT,
@@ -223,7 +223,8 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
           }
 
           doneButton.active = true;
-        } else {
+        }
+        else {
           dayLengthBox.setTextColor(16733525);
           doneButton.active = false;
         }
@@ -250,7 +251,8 @@ public class SeasonOptionsScreen extends SeasonHudScreen {
                                               scale, (b) -> {
         if (b.selected()) {
           Config.setShowDay(ShowDay.SHOW_WITH_TOTAL_DAYS);
-        } else {
+        }
+        else {
           Config.setShowDay((ShowDay.SHOW_DAY));
         }
       }, Config.getShowDay() == ShowDay.SHOW_WITH_TOTAL_DAYS);

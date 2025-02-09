@@ -79,7 +79,7 @@ public class CurrentMinimap {
     }
 
     boolean enabled = Config.getEnableMod() && Config.getEnableMinimapIntegration();
-    boolean hiddenMinimap = Services.MINIMAP.hideHudInCurrentDimension() || Services.MINIMAP.hiddenMinimap(minimap);
+    boolean hiddenMinimap = Common.hideHudInCurrentDimension() || Services.MINIMAP.hiddenMinimap(minimap);
 
     return enabled && Calendar.validNeedCalendar() && !mc.options.hideGui && !hiddenMinimap;
   }

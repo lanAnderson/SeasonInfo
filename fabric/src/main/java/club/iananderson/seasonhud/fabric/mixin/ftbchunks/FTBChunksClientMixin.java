@@ -28,8 +28,7 @@ public class FTBChunksClientMixin {
 
   @Unique
   private static final BooleanValue MINIMAP_SEASON = FTBChunksClientConfig.MINIMAP.getBoolean("season", true)
-                                                                                  .comment(new String[]{
-                                                                                      "Show season under minimap"});
+      .comment(new String[]{"Show season under minimap"});
 
   @Inject(method = "renderHud", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;scale(FFF)V"))
   private void renderHud(PoseStack matrixStack, float tickDelta, CallbackInfo ci) {

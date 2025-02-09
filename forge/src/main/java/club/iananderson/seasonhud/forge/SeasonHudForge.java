@@ -20,7 +20,7 @@ public class SeasonHudForge {
     MinecraftForge.EVENT_BUS.register(this);
     Common.init();
 
-    ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "SeasonHUD-client.toml");
+    ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "seasonhud-client.toml");
 
     modEventBus.addListener(ClientModEvents::onInitialize);
   }
@@ -29,7 +29,7 @@ public class SeasonHudForge {
   public static class ClientModEvents {
     @SubscribeEvent
     public static void onInitialize(FMLCommonSetupEvent event) {
-      if (Common.curiosLoaded()) {
+      if (Common.curiosLoaded() && Common.sereneSeasonsLoaded()) {
         Common.LOG.info("Talking to Curios");
         new CuriosCompat().setup(event);
       }

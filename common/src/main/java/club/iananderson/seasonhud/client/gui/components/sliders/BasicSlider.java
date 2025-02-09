@@ -53,7 +53,8 @@ public class BasicSlider extends AbstractSliderButton {
       DrawUtil.enableScissor(j, k, l, m);
       GuiComponent.drawString(graphics, font, component, j - (int) g, p, n);
       DrawUtil.disableScissor();
-    } else {
+    }
+    else {
       r = Mth.clamp(i, j + o / 2, l - o / 2);
       GuiComponent.drawCenteredString(graphics, font, component, r, p, n);
     }
@@ -128,7 +129,8 @@ public class BasicSlider extends AbstractSliderButton {
   protected void updateMessage() {
     if (this.drawString) {
       this.setMessage(new TextComponent(this.getValueString()));
-    } else {
+    }
+    else {
       this.setMessage(new TextComponent(""));
     }
   }

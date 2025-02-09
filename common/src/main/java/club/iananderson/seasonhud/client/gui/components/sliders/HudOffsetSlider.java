@@ -49,7 +49,8 @@ public class HudOffsetSlider extends BasicSlider {
   protected void updateMessage() {
     if (this.drawString) {
       this.setMessage(new TextComponent("").append(this.prefix).append(this.getValueString()));
-    } else {
+    }
+    else {
       this.setMessage(new TextComponent(""));
     }
   }

@@ -31,10 +31,12 @@ public class MapAtlases extends GuiComponent {
 
       if (!mapAtlasesConfig.get()) {
         return false;
-      } else {
+      }
+      else {
         return !mc.options.renderDebug && atlas.getCount() > 0;
       }
-    } else {
+    }
+    else {
       return false;
     }
   }
