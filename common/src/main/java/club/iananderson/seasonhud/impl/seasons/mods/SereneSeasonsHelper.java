@@ -3,6 +3,8 @@ package club.iananderson.seasonhud.impl.seasons.mods;
 import club.iananderson.seasonhud.config.Config;
 import club.iananderson.seasonhud.impl.seasons.Calendar;
 import club.iananderson.seasonhud.platform.Services;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import sereneseasons.api.season.ISeasonState;
@@ -10,10 +12,10 @@ import sereneseasons.api.season.SeasonHelper;
 import sereneseasons.config.ServerConfig;
 
 public class SereneSeasonsHelper {
-  private SereneSeasonsHelper(){
-  }
+  public static Item CALENDAR = Registry.ITEM.get(new ResourceLocation("sereneseasons", "calendar"));
 
-  public static Item CALENDAR = Services.PLATFORM.calendar();
+  private SereneSeasonsHelper() {
+  }
 
   public static boolean isTropicalSeason(Player player) {
     boolean showTropicalSeasons = Config.getShowTropicalSeason();
