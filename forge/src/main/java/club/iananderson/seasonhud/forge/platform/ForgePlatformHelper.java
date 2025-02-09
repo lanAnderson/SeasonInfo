@@ -2,9 +2,11 @@ package club.iananderson.seasonhud.forge.platform;
 
 import club.iananderson.seasonhud.platform.services.IPlatformHelper;
 import java.util.Optional;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
+import sereneseasons.api.SSItems;
 
 public class ForgePlatformHelper implements IPlatformHelper {
 
@@ -24,7 +26,8 @@ public class ForgePlatformHelper implements IPlatformHelper {
 
     if (mod.isPresent()) {
       return mod.get().getModInfo().getVersion().toString();
-    } else {
+    }
+    else {
       return "Not Loaded";
     }
   }
@@ -32,5 +35,10 @@ public class ForgePlatformHelper implements IPlatformHelper {
   @Override
   public boolean isDevelopmentEnvironment() {
     return !FMLLoader.isProduction();
+  }
+
+  @Override
+  public Item calendar() {
+    return SSItems.CALENDAR.get();
   }
 }

@@ -3,7 +3,6 @@ package club.iananderson.seasonhud.impl.seasons;
 import club.iananderson.seasonhud.Common;
 import club.iananderson.seasonhud.client.gui.ShowDay;
 import club.iananderson.seasonhud.config.Config;
-import club.iananderson.seasonhud.platform.Services;
 import java.time.LocalDateTime;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -17,18 +16,18 @@ public class CurrentSeason {
   private final String currentSeason;
   private final String currentSubSeason;
   private final String seasonFileName;
-  private final int seasonDate;
+  private final long seasonDate;
   private final int seasonDuration;
   private Style seasonFormat;
 
   public CurrentSeason(Minecraft mc) {
     Player player = mc.player;
     this.seasonFormat = Style.EMPTY;
-    this.currentSeason = Services.SEASON.getCurrentSeason(player);
-    this.currentSubSeason = Services.SEASON.getCurrentSubSeason(player);
-    this.seasonFileName = Services.SEASON.getSeasonFileName(player);
-    this.seasonDate = Services.SEASON.getDate(player);
-    this.seasonDuration = Services.SEASON.seasonDuration(player);
+    this.currentSeason = CommonSeasonHelper.getCurrentSeason(player);
+    this.currentSubSeason = CommonSeasonHelper.getCurrentSubSeason(player);
+    this.seasonFileName = CommonSeasonHelper.getSeasonFileName(player);
+    this.seasonDate = CommonSeasonHelper.getDate(player);
+    this.seasonDuration = CommonSeasonHelper.seasonDuration(player);
   }
 
   public static CurrentSeason getInstance(Minecraft mc) {
@@ -49,7 +48,8 @@ public class CurrentSeason {
 
     if (!Calendar.validDetailedMode() || Common.fabricSeasonsLoaded()) {
       season = getSeasonLowerCase();
-    } else {
+    }
+    else {
       season = Config.getShowSubSeason() ? getSubSeasonLowerCase() : getSeasonLowerCase();
     }
 
@@ -93,7 +93,7 @@ public class CurrentSeason {
         break;
 
       case SHOW_WITH_MONTH:
-        if (Services.SEASON.isSeasonTiedWithSystemTime()) {
+        if (CommonSeasonHelper.isSeasonTiedWithSystemTime()) {
           int systemMonth = LocalDateTime.now().getMonth().getValue();
           String systemMonthString = String.valueOf(systemMonth);
 
@@ -108,7 +108,8 @@ public class CurrentSeason {
           if (!Calendar.validDetailedMode()) {
             text = new TranslatableComponent(ShowDay.NONE.getKey(), getSeasonKey());
           }
-        } else {
+        }
+        else {
           text = new TranslatableComponent(ShowDay.SHOW_DAY.getKey(), getSeasonKey(), seasonDate);
         }
         break;

@@ -50,6 +50,8 @@
   "desc.seasonhud.season.winter.early": "Early Winter",
   "desc.seasonhud.season.winter.late": "Late Winter",
   "desc.seasonhud.season.winter.mid": "Mid Winter",
+  "desc.seasonhud.season.null": "Error",
+  "desc.seasonhud.season.null.mid": "Mid Error",
   "desc.seasonhud.showday.day": "Day #",
   "desc.seasonhud.showday.month": "(Month), #",
   "desc.seasonhud.showday.none": "OFF",

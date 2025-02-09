@@ -12,6 +12,11 @@ dependencies {
     implementation 'com.electronwill.night-config:toml:3.6.3'
     compileOnly "net.minecraftforge:forgeconfigapiport-fabric:${project.forge_config_api_port_version}"
 
+    modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.1"
+    modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.1"
+    modCompileOnly "dev.emi:trinkets:${project.trinkets_version}"
+    modCompileOnly "top.theillusivec4.curios:curios-forge:${project.curios_version}"
+
     // Minimap Mods
     // Not used in common unless they are actually  loaded.
     modCompileOnly "maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_Forge_1.18.2"
@@ -20,4 +25,11 @@ dependencies {
     modCompileOnly "maven.modrinth:journeymap:${project.minecraft_version}-${project.journeymap_version}-forge"
     modCompileOnly "curse.maven:map-atlases-forge-519759:${project.map_atlases_forge_version}"
 
+    //Season Mods
+    // Not used in common unless they are actually  loaded.
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-forge"
+    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-forge"
+    modCompileOnly "maven.modrinth:fabric-seasons:${project.fabric_seasons_version}"
+    modCompileOnly "maven.modrinth:fabric-seasons-extras:${project.fabric_seasons_extras_version}"
+    modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
 }

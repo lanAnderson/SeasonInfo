@@ -72,7 +72,8 @@ public class RgbSlider extends BasicSlider {
       if (!enableColor) {
         this.setMessage(colorString.copy().withStyle(ChatFormatting.GRAY));
       }
-    } else {
+    }
+    else {
       this.setMessage(new TextComponent(""));
     }
   }

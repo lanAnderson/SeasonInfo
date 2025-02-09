@@ -24,7 +24,9 @@ public enum Seasons {
       Config.getDryColor(), Rgb.seasonMap(Config.getDryColor())),
 
   WET(5, new TranslatableComponent("desc.seasonhud.season.wet"), "wet", "\uEA05", Config.DEFAULT_WET_COLOR,
-      Config.getWetColor(), Rgb.seasonMap(Config.getWetColor()));
+      Config.getWetColor(), Rgb.seasonMap(Config.getWetColor())),
+
+  NULL(100, new TranslatableComponent("desc.seasonhud.season.null"), "null", "\uEA99", 16777215, 16777215, Rgb.seasonMap(16777215));
 
   public static final EnumSet<Seasons> SEASONS_ENUM_LIST = EnumSet.allOf(Seasons.class);
   private final int id;

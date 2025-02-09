@@ -12,14 +12,6 @@ import net.minecraft.world.level.Level;
 import sereneseasons.config.ServerConfig;
 
 public class ForgeMinimapHelper implements IMinimapHelper {
-
-  @Override
-  public boolean hideHudInCurrentDimension() {
-    ResourceKey<Level> currentDim = Objects.requireNonNull(Minecraft.getInstance().level).dimension();
-
-    return !ServerConfig.isDimensionWhitelisted(currentDim);
-  }
-
   // Needed for older versions. Makes it easier to port.
   @Override
   public boolean hideMapAtlases() {
@@ -37,7 +29,8 @@ public class ForgeMinimapHelper implements IMinimapHelper {
       boolean hasAtlas = atlas.getCount() > 0;
 
       return !drawMinimapHud || !hasAtlas;
-    } else {
+    }
+    else {
       return false;
     }
   }
