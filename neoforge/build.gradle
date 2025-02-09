@@ -33,9 +33,13 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 
     //Serene Seasons
-    modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-neoforge"
-    modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-neoforge"
+    modCompileOnly "maven.modrinth:serene-seasons:${project.serene_seasons_version}-neoforge"
+    modCompileOnly "maven.modrinth:glitchcore:${project.glitchcore_version}-neoforge"
     implementation("net.jodah:typetools:0.6.3")
+
+    //Terrafirmacraft
+    modCompileOnly "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
+    modCompileOnly "maven.modrinth:patchouli:${project.patchouli_version}-neoforge"
 
     //Xaero's Minimap
     modCompileOnly "maven.modrinth:xaeros-minimap:${project.xaeros_minimap_version}_NeoForge_1.21.4"
@@ -85,6 +89,21 @@ dependencies {
             break
         default: println("Unknown recipe viewer specified: ${project.minimap_mod}. Must be xaero, journey, ftb, " +
                 "atlas, or none")
+    }
+
+    // Season Mod Dev Tests (Forge)
+    // See root gradle.properties to choose which to use at runtime.
+    switch (project.season_mod_neoforge.toLowerCase(Locale.ROOT)) {
+        case "serene":
+            modImplementation "maven.modrinth:serene-seasons:${project.serene_seasons_version}-neoforge"
+            modImplementation "maven.modrinth:glitchcore:${project.glitchcore_version}-neoforge"
+            implementation("net.jodah:typetools:0.6.3")
+            break
+        case "terra":
+            modImplementation "maven.modrinth:terrafirmacraft:${project.terrafirmacraft_version}"
+            modImplementation "maven.modrinth:patchouli:${project.patchouli_version}-neoforge"
+            break
+        default: println("Unknown season mod specified: ${project.minimap_mod}. Must be serene or terra")
     }
 }
 
