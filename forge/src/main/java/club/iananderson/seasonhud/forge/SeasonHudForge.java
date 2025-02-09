@@ -17,7 +17,8 @@ public class SeasonHudForge {
     MinecraftForge.EVENT_BUS.register(this);
     Common.init();
 
-    NeoForgeConfigRegistry.INSTANCE.register(ModConfig.Type.CLIENT, Config.GENERAL_SPEC, "seasonhud-client.toml");
+    NeoForgeConfigRegistry.INSTANCE.register(Common.MOD_ID, ModConfig.Type.CLIENT, Config.GENERAL_SPEC,
+                                             "seasonhud-client.toml");
 
     modEventBus.addListener(SeasonHudForge::onInitialize);
     modEventBus.addListener(SeasonHudForge::ftbChunkSetup);
