@@ -18,7 +18,6 @@ public class AccessoriesCalendar implements Accessory {
     if (Services.PLATFORM.getModVersion("accessories").startsWith("1.1.0") || Services.PLATFORM.getModVersion(
         "accessories").startsWith("1.0.0")) {
       AccessoriesAPI.registerAccessory(CommonSeasonHelper.calendar(), new AccessoriesCalendar());
-
     } else {
       AccessoryRegistry.register(CommonSeasonHelper.calendar(), new AccessoriesCalendar());
     }

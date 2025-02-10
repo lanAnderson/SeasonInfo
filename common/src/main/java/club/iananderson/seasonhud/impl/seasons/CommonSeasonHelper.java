@@ -36,7 +36,7 @@ public class CommonSeasonHelper {
    */
   public static boolean isSeasonTiedWithSystemTime() {
     if (Common.fabricSeasonsLoaded()) {
-      return FabricSeasonsHelper.isSeasonTiedWithSystemTime;
+      return FabricSeasonsHelper.isSeasonTiedWithSystemTime();
     }
     else {
       return false;

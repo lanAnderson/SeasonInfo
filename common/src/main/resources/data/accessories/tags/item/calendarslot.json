@@ -4,6 +4,10 @@
     {
       "id": "sereneseasons:calendar",
       "required": false
+    },
+    {
+      "id": "seasonsextras:season_calendar",
+      "required": false
     }
   ]
 }
